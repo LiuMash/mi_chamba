@@ -1,264 +1,335 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDDMWHNN0W"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-CDDMWHNN0W');
-  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Mi Chamba</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    :root {
-        --primary-color: #1193d4;
-        --secondary-color: #f3f4f6;
-        --text-primary: #1f2937;
-        --text-secondary: #6b7280;
-      }
-      body {
-        font-family: 'Work Sans', sans-serif;
-      }
-      .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
-    </style>
-  <title>Mi chamba - Servicios Profesionales en Buenos Aires</title>
-  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#11b4d4",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101f22",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-    <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+  <div class="flex flex-col min-h-screen">
+    <header
+      class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Левый кластер: логотип + слоган + ссылки -->
           <div class="flex items-center gap-8">
-            <a class="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)]" href="#">
-              <span class="text-2xl text-[var(--primary-color)]">
-                <svg fill="currentColor" height="28" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9C10.2 1.2 7.1 1 4.9 2.2L9 6.3 6.3 9 2.2 4.9C1 7.1 1.2 10.2 3.1 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.2-2.2c.4-.4.4-1.1 0-1.4z">
-                  </path>
-                </svg>
-              </span>
-              Mi Chamba
-            </a>
-            <nav class="hidden md:flex items-center gap-6">
-              <a class="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors"
-                href="#">Inicio</a>
-              <a class="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors"
+            <div class="flex items-center gap-3">
+              <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg">...</svg>
+              <div>
+                <h1 class="text-xl font-bold text-gray-900 dark:text-white">Mi Chamba</h1>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Tu solución está a un clic</p>
+              </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+              <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
                 href="#">Servicios</a>
-              <a class="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors"
-                href="#">Profesionales</a>
-              <a class="text-sm font-medium text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors"
-                href="#">Contacto</a>
+              <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                href="#">Especialistas</a>
             </nav>
           </div>
+
+          <!-- Правый кластер: кнопки -->
           <div class="flex items-center gap-4">
+            <a class="hidden md:block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#">Entrar como especialista</a>
             <button
-              class="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 text-[var(--text-secondary)]">
-              <span class="material-symbols-outlined">search</span>
-            </button>
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[var(--primary-color)] text-white hover:bg-[var(--primary-color)]/90 h-10 px-4 py-2">
-              Publicar un servicio
-            </button>
-            <button class="relative h-10 w-10 rounded-full">
-              <img alt="User avatar" class="h-full w-full rounded-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGdK8JewVybQLC8jbFb0Sm8cniu-cH7hNtRJbi3xQ7IPf4Jk1fkdccMRsvh0niqnHEPv6ZBlI7LWiQGlMKsr_jN_P-U3umWtIcncnIpho26BQ8016SiSu9xsWYOq4DzxhIlpWcJu1WAirT-hPbMmDFIpR1p5VsoV5i6acx5OWjfGJXgTIMovkuuAc-l5b82fy9u0i67O-a40ZPujgzZdI1fUpo5CejcDFcW3E-ZV13Os5ZfJODp7o0HropP76QHkQ1QXvesVH-LPiz" />
-              <span
-                class="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-400 ring-2 ring-white"></span>
+              class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+              Ingresar / Registrarse
             </button>
           </div>
         </div>
       </div>
     </header>
-    <main class="flex-1">
-      <section class="relative h-[60vh] min-h-[480px] flex items-center justify-center text-white">
-        <div class="absolute inset-0 bg-cover bg-center"
-          style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAy3FB8JNbw6zrSAX6EU8IDlMFhP0yrWUETvVPGyLBaKlSWyyyyhXYxmr7BWypXVsMva15v9qnsyUq85XyBSkiYkzPi-mGf4OPgBZlXuab3FQ_Q49ThrSWYLvkhCAZWuuPkreX5pHjzevS-hLUrCZ6mwmldsIgoJ7W8Q24E8QstXQCcUr8hXv5W3jYFAtwq9kgaIkkQ7Ad__Ygb8nrtdYZpgBWnL2pxw7BFQ6TWIJveBfEOv2Rrlqz7EuLwY51cvIx01j_qbfQp9COn");'>
-        </div>
-        <div class="relative z-10 mx-auto max-w-3xl text-center px-4">
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Encuentra profesionales de confianza en Buenos Aires
-          </h1>
-          <p class="mt-6 text-lg leading-8 text-gray-200">
-            Conecta con expertos locales para cualquier tarea que necesites, desde reparaciones hasta servicios
-            personales.
-          </p>
-          <div class="mt-10 flex w-full max-w-2xl mx-auto rounded-lg shadow-lg">
-            <div class="relative w-full">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <span class="material-symbols-outlined text-gray-400">search</span>
-              </div>
+    <main class="flex-grow">
+      <section
+        class="relative h-[60vh] min-h-[480px] flex items-end justify-center text-center text-white bg-cover bg-center"
+        style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCx9EFO6Itsu17_FteKuwMl3bW49HmmYOyqU9ins9qNOJOBsXK_QxpqWKtWcU2DmaVKPwFxIXw7xLfXrVXD6gaWiOo6BzyBmzBSdSGFDNdf91tG2zqGBCAFPZaxhx2GLCUSkrlqCwSwtKoIQvPZwrePV5keE7MOHifcAMhfUKUSO_9mY4GhaOqSNvIJ-038sK3T6-qo3sOCgCupbIPp1nHJMJGYeP4NmJzj-ZplYuLjLAIZX9RdG3T5aeAFHjhi0i3OhaVI50_vS99_");'>
+        <div class="container mx-auto px-6 pb-20">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tighter mb-4">Resolvé tu problema en
+            minutos</h1>
+          <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto">Escribí tu problema, recibí propuestas y elegí
+            con quién trabajar</p>
+          <div class="max-w-2xl mx-auto">
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">search</span>
               <input
-                class="block w-full rounded-l-md border-0 bg-white py-4 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[var(--primary-color)] sm:text-sm sm:leading-6"
-                placeholder="Busca servicios o profesionales" type="search" />
+                class="w-full h-16 pl-12 pr-32 rounded-xl border-none focus:ring-2 focus:ring-primary text-gray-800 placeholder-gray-500"
+                placeholder="Ej.: clases de inglés, logo para negocio…" type="text" />
+              <button
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg text-base transition-colors">
+                Buscar
+              </button>
             </div>
-            <button
-              class="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-6 py-4 text-sm font-semibold text-white bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 focus:z-10"
-              type="submit">
-              Buscar
-            </button>
+            <p class="text-sm text-gray-300 mt-2">Podés enviar un pedido sin registrarte.</p>
           </div>
         </div>
       </section>
-      <section class="py-16 sm:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">Categorías Populares
-            </h2>
-            <p class="mt-4 text-lg text-[var(--text-secondary)]">Explora los servicios más solicitados por nuestra
-              comunidad.</p>
+      <section class="py-20">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Beneficios de Mi Chamba</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Descubre por qué somos la
+              plataforma ideal para encontrar profesionales calificados de forma rápida y segura.</p>
           </div>
-          <div class="mt-12 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
-            <a class="group block" href="#">
-              <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img alt="Reparaciones del hogar"
-                  class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwivjt-dJWH8QW_FXJVV5R6gNwxau7f380buk5zfch9A_wdT0Mwq2HESJvxX-Hq86ldDZK50srVcsvEqKTEN_jcAnbqsJfY0u6cl6_uFGf9KhhR6e51rg4c4YRMYj9BJeVsrz1jkt-Ao3o_eOAua6DQv8yZFHzITryhU7keAr0dJUvuJt970OSTHWSaCOMAxQKhZnhHgvaPGdokkrDS-hkK6abx7DOYSy_g1FnL0Gq3w2iBXjbE1sROymYPm83mFKwDgpfSVd3lTd7" />
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="bg-white dark:bg-background-dark p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary mb-4">
+                <span class="material-symbols-outlined">groups</span>
               </div>
-              <h3 class="mt-4 text-lg font-semibold text-[var(--text-primary)]">Reparaciones del hogar</h3>
-              <p class="mt-1 text-sm text-[var(--text-secondary)]">Fontanería, electricidad, pintura...</p>
+              <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Los especialistas te escriben</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Contá tu necesidad y recibirás propuestas con precios
+                y condiciones.</p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary mb-4">
+                <span class="material-symbols-outlined">payments</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Mejor precio para vos</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Podés comparar diferentes presupuestos y elegir la
+                opción que más te convenga.</p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary mb-4">
+                <span class="material-symbols-outlined">verified_user</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Especialistas verificados</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Solicitamos a los profesionales validar su identidad,
+                experiencia y formación.</p>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+              <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary mb-4">
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Opiniones reales</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Solo se puede dejar una reseña después de haber
+                trabajado; cada opinión es revisada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Explorá nuestras categorías</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Encontrá el servicio que necesitás entre una amplia
+              variedad de opciones.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <a class="group block" href="#">
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhkNCVtBeny_LJbrvQqdwbLPpmQf6Hd46M6PuibV9s9GQhfcjsfyq64A0Wm-Ep6np0dxC2KqzKeSwqgbaTycni4desEdIsRXZDJr2q86P8MfTuADgEJGt_2VcSGUBKJtQBgM5YVw8-2jCCuzrl5HWBmqSP8RLWlct0iw_8xdkwwBrGXRv3DNI-qWUVob605oVS-B2jMJZjNGCFUk9XjsOnKNfELGXv6NcePpQvycqS6hRHjJoTSPzdlBk0yuwFCO-MCfsLhksK27DR" />
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Hogar y reparaciones</h3>
             </a>
             <a class="group block" href="#">
-              <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img alt="Cuidado de mascotas"
-                  class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFwjzbP6Cvosn_D2nKLFVg7UCNMskNOJx3APhOzpUt1I9JrBNsN3yJpo7otcjDoIWGdo5F_x0pZDSkR4AnvfGtcMixq8GSdYxeEDD-U0QTf9nVhqV_J1q-ZJ0WHUUdv5tm7lHZhtsS1UvRqclF_GO811pq4QgqzDkkOSntL-dTZzio5dEJK8B9V2i9_K27VlBBPF4r5nrp1oG1g3ShFv3m-1FKOJUHnUARKAo3w8TJnpqoiVPfxH-6bSmY3-RKusim2qrEg-ix7qDU" />
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSXHQW_2r9ZOcQPg3-ETLqtgO9PUhOBkAmaHVcEKnLeQKdPl9yDBXz7LRASlSNwJqG2lRPYuctMQITY2QhuZsoEw_I4yoY525HmzvU_KiH61psEsXt1Bp49WkjlerT2JDIDIyb72F0cMeyrB2q0-0v2e0ilUSGB-iAR2-uxl42AdHFza9K6ET3Ueu9OZa0KCRcT0fUpqloGdgQLCMe5V8-iosWowFrHqdbJNWZJeZw6fgPrmjooMAwGEp7GqS0O_z6Z06FTLiDhVVQ" />
+                <div class="absolute inset-0 bg-black/20"></div>
               </div>
-              <h3 class="mt-4 text-lg font-semibold text-[var(--text-primary)]">Cuidado de mascotas</h3>
-              <p class="mt-1 text-sm text-[var(--text-secondary)]">Paseos, cuidado en casa, entrenamiento...</p>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Clases y educación</h3>
             </a>
             <a class="group block" href="#">
-              <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img alt="Eventos y celebraciones"
-                  class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcfclwWOo67ofC9ZEqsygLq49anSfDO-PEq6a2lzyENNByiZ4URhVPFc4lgMN5DlM6G-gHFZoMWiBDJIk1xaIbNz_hfAxK1JxpWN3wR8vcJzb8ZQt0qAROXPiPxbMn2jdSymOVNLpOISOIHBclpxQwDwFI9aPF5G1es5eeUnN9eOczNrnVu3-TWeZgsTjiy6nZu7qAsQK6agBonwYqDjfiiG17pUu8os-64-izxkKjU8txzr_LbQpLBDxh10r0fyIUSXiw-2wGcvCn" />
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQhcAPlyOsELDzF5-X-aAsZJE4T3kvFcfFalkp7_AEUI9ab3EXBJT8THr3ZS1513IUoVG5rR4wLu0Jaj-yoQmWSyl9Rsw4e4RyDuLlGFxz_0DNElUB1LfCaNpRpMY8P-2lkhWYoELn555mmHGGfAVzp_VRFI0A6_vnGSPcIFRVkMIG3nf60nfypvc7uDMD_JeNMizdS_-KHsfEgbjGoXiysYkHKcDfG-cEr7ZizwYIPakINl2t95OpUfJ_0IEvbTtwpW6khrlwh55x" />
+                <div class="absolute inset-0 bg-black/20"></div>
               </div>
-              <h3 class="mt-4 text-lg font-semibold text-[var(--text-primary)]">Eventos y celebraciones</h3>
-              <p class="mt-1 text-sm text-[var(--text-secondary)]">Catering, música, fotografía...</p>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Belleza y salud</h3>
             </a>
             <a class="group block" href="#">
-              <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img alt="Clases y tutorías"
-                  class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjgi9m25es5TIWs6C--FwZl7XiIApDsh3xcjBy4btl2vOFoggtUbmqbQLgD-FkVp5kIGbGXFas-mdOAvPHJqZHzU6TT8COzFwndWgjl81VOGvs_aGs9kvTqIrn5cLBVkshPnwcF2Useg4tRWfXlGP2rkFhjUfDYx_Yp-eYxsSAAkvWdx8Gx8NBOPXNtyKD1912HZsWzVTHEUiBUtH-VBIhwKYRG1ttdBDggxB8WzD1fd-hkW8vrWRnae814Z1L-_Nbpa_CiTyV2a3F" />
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMZA7q5gCY4wQgD2hV413BXIInO-7kuGOaTMmJslrad2oJ4-gk3XdqdSIlT5Na86SNTjE5911fKdZXjq2V7OTmaw5Ru5d-zXUPUd0AXipfhOpRCwksR9yvaJj8zrZI_p82IBlKw19vAlxGX2P60fcanfbfTVNx3gMjHXfjx61Vczcaq0F1HrggD8kAzwxPCgVfQI3eqDbp1ar0qGYuoRvFZM7ZOJZvYtSnQZv2kDYQzXOOdSh5wSg7jD-DiQIVzac9IGYFHicBb-Wy" />
+                <div class="absolute inset-0 bg-black/20"></div>
               </div>
-              <h3 class="mt-4 text-lg font-semibold text-[var(--text-primary)]">Clases y tutorías</h3>
-              <p class="mt-1 text-sm text-[var(--text-secondary)]">Idiomas, música, apoyo escolar...</p>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Diseño y tecnología</h3>
             </a>
             <a class="group block" href="#">
-              <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img alt="Salud y bienestar"
-                  class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnp-lIvli1lfWdbtzyaEmlt9Ndimdvp0GzrBzM4E4MDZFimUbesnF-aiaBsSH6ycIuYDOjEkE5J--ckH5DlOsM9f2AJMZPL9YgF4doBrjl-gyY0ginUqX0X4mMdQQX07ozlJe0Bc-2Z1stt4V2go1_Hqk65WiXwObT8sWAO1vraDeB0L_YUoCe-rjaO2pJ7TuN-zMP0FOuB3GS5Ev1oKCHTmAaH83URTeYlFhDKkOz5UkJBll30WQDbFlUo3AM9X-aZ6M_9uHGLySv" />
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb9zOIwtVV-evGo-qpwlug5uN6VA4d5bHCKlGmQ2W4GFCknwpEVpzKg6GjIZx2LSQzYzxH7KfV0UFHkd2sTb9u7n5Kzsp_2bg4ekVVDW8e842Ktd7C5t9Fj38dbftS_HwSWHw79YnidNYHDKt0deqnz_j0o06ePwE7vBhFTL1dyNjp7caG9OAFXEPJsmmlcP6eRu5QlfIvwH5f0JT4YQllXMCh25uwAH6taRtSXQeEXpl8ClfqIxkf9_XFDwwgzCG5ici98jzeLDyy" />
+                <div class="absolute inset-0 bg-black/20"></div>
               </div>
-              <h3 class="mt-4 text-lg font-semibold text-[var(--text-primary)]">Salud y bienestar</h3>
-              <p class="mt-1 text-sm text-[var(--text-secondary)]">Yoga, masajes, terapia...</p>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Mascotas</h3>
             </a>
             <a class="group block" href="#">
-              <div
-                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                <img alt="Belleza y cuidado personal"
-                  class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKzx5pJrJRwxmN46ohmTAG0vmx72bc__5zLGTzjVblvAYmIQ5MjX4Fn3qW4sJyyU89Xi3vk4Yv-RlemzmKVttw6aB69-Dv8hiWDc8sXGNBxM1IcEuBlG36xG678tN_a8RzsBr3byE5cB3nNJg8vDf41pr-t2mp7xnXDC3yHLMzKV4wrRp0fH6fyFVafb6oHyxckIViayvml12xbby8YUtuo31ni76LvozpgpyhGRfliSMvmPUcieAFpbisbL7lI2c_sHp8E0evyXAt" />
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGLmOHBAZWOMvnc0OY_ZgCvQQGow5MU9csLkmOEli7HK_LLowfAKXNawOCoadl73YDprw5LD9XMTCq-rtEvlhPrqgz_9z43NG9CarrUtCPI9u8qSpfqv38C8bV_TAnGLKT5nVhHsW0_EqE3dBDA0XveWAM6d7qflOIP9Z_R_eicHa3nZHpMe7zEW-z1Q8u1x6hZc2dwuXi-LwZf1J1fVufiWXJklkpslRFfsTd4GIw3BWg51mX9Jc7_8qYAQoEKgT2CdKXROa605Cd" />
+                <div class="absolute inset-0 bg-black/20"></div>
               </div>
-              <h3 class="mt-4 text-lg font-semibold text-[var(--text-primary)]">Belleza y cuidado personal</h3>
-              <p class="mt-1 text-sm text-[var(--text-secondary)]">Cortes de pelo, manicura, maquillaje...</p>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Mudanzas y transporte</h3>
             </a>
+            <a class="group block" href="#">
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKYuzHmbADem1-LGNUAOX8dOO_GZjSsNp6pskbEo8AnJ6Y5IaSaKLGj2PD1b7uoQimNW_nMuqTwq6f2DRTIXPIY1UO8CrGT3Zc78lBtWrTP2gBOve6dJsLic8cNtKTQalnmP7Tb9TAlZ9oxVaCYxyixyyO0CyufpGLqwUZr3ydlL3gxoArSJY8yCLekWFADE1rZEiEhG5z7w14NbsewVwwspnsf8YpkZdEdTp3orQ-sZkUc-k9K4PYbbq8ze0LtJrA9X_9JzsdbTM4" />
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Deporte</h3>
+            </a>
+            <a class="group block" href="#">
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  class="w-full h-full object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS29uMzzJjMJqAYOGz2PCBwrRG9wUoQOzls8K9MXH6-F6ujFgWkFDvAu7zrqKlAH7Z9KyeMlL_rkjY2qtyGmv0GmDz3FtwUgpwivmj2Lr0sXdNFnEmjzOfnfnsAnY8aId63txyLOSPr4CQcBsQGZseJKWpwLvUoS_88Pg-7qpJBHKwpgDKTQcCFT-a8tUIUz_asjinyZ6BkRMZN6Df_JRkNsrpT6JMGpBQxrtIN7lO7_KuqTDO1ot_wWWo30o02ZSX3WunPHsWTzE-" />
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+              <h3
+                class="mt-4 text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary">
+                Servicios legales y contables</h3>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-20">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Preguntas frecuentes</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Encontrá respuestas a las dudas más comunes sobre
+              Mi Chamba.</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto">
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Cómo funciona Mi Chamba?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Mi Chamba te conecta con especialistas para
+                resolver tus necesidades. Publica tu pedido, recibe propuestas y elige al profesional ideal.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Es seguro contratar a través de Mi Chamba?
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Mi Chamba verifica la identidad y experiencia de
+                los especialistas para garantizar un servicio seguro y confiable.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Cómo puedo contactar a un especialista?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Puedes contactar a un especialista directamente a
+                través de la plataforma una vez que hayas recibido una propuesta.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Qué tipo de servicios puedo encontrar?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">En Mi Chamba puedes encontrar una amplia gama de
+                servicios, desde reparaciones del hogar hasta clases particulares y servicios legales.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Cómo puedo pagar por los servicios?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">El pago se realiza directamente al especialista
+                una vez que el servicio ha sido completado satisfactoriamente.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Qué pasa si no estoy satisfecho con el
+                servicio?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Si no estás satisfecho con el servicio, puedes
+                contactar a nuestro equipo de soporte para obtener ayuda.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Cómo puedo convertirme en especialista?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Para convertirte en especialista, regístrate en
+                la plataforma y completa tu perfil con tu experiencia y habilidades.</p>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h3 class="font-semibold text-gray-800 dark:text-gray-200">¿Cómo puedo dejar una reseña?</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Puedes dejar una reseña después de haber
+                trabajado con un especialista para compartir tu experiencia.</p>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="bg-gray-100 border-t border-gray-200">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="space-y-4 col-span-2 md:col-span-1">
-            <a class="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)]" href="#">
-              <span class="text-2xl text-[var(--primary-color)]">
-                <svg fill="currentColor" height="28" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9C10.2 1.2 7.1 1 4.9 2.2L9 6.3 6.3 9 2.2 4.9C1 7.1 1.2 10.2 3.1 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.2-2.2c.4-.4.4-1.1 0-1.4z">
-                  </path>
-                </svg>
-              </span>
-              Mi Chamba
-            </a>
-            <p class="text-sm text-[var(--text-secondary)]">Conectando profesionales con quienes los necesitan en Buenos
-              Aires.</p>
+    <footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="flex items-center gap-3 mb-6 md:mb-0">
+            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"
+                fill="currentColor"></path>
+              <path clip-rule="evenodd"
+                d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z"
+                fill="currentColor" fill-rule="evenodd"></path>
+            </svg>
+            <div>
+              <h1 class="text-xl font-bold text-gray-900 dark:text-white">Mi Chamba</h1>
+              <p class="text-xs text-gray-500 dark:text-gray-400">Tu solución está a un clic</p>
+            </div>
           </div>
-          <div>
-            <h3 class="font-semibold text-[var(--text-primary)]">Categorías</h3>
-            <ul class="mt-4 space-y-2 text-sm">
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Hogar</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Mascotas</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Eventos</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Clases</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-semibold text-[var(--text-primary)]">Sobre nosotros</h3>
-            <ul class="mt-4 space-y-2 text-sm">
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">¿Quiénes somos?</a>
-              </li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Carreras</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Prensa</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Blog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-semibold text-[var(--text-primary)]">Soporte</h3>
-            <ul class="mt-4 space-y-2 text-sm">
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Contacto</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Preguntas
-                  frecuentes</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Términos y
-                  condiciones</a></li>
-              <li><a class="text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="#">Política de
-                  privacidad</a></li>
-            </ul>
-          </div>
+          <nav class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm">
+            <a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#">Sobre nosotros</a>
+            <a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#">Soporte</a>
+            <a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#">Contacto</a>
+            <a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#">Términos y condiciones</a>
+            <a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#">Política de privacidad</a>
+          </nav>
         </div>
-        <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col sm:flex-row items-center justify-between">
-          <p class="text-sm text-[var(--text-secondary)]">© 2024 Mi Chamba. Todos los derechos reservados.</p>
-          <div class="flex gap-4 mt-4 sm:mt-0">
-            <a class="text-gray-400 hover:text-gray-500" href="#"><span class="sr-only">Facebook</span><svg
-                aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path clip-rule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  fill-rule="evenodd"></path>
-              </svg></a>
-            <a class="text-gray-400 hover:text-gray-500" href="#"><span class="sr-only">Instagram</span><svg
-                aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path clip-rule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.148 2 12.315 2zm-1.162 4.148a.637.637 0 10-1.274 0 .637.637 0 001.274 0zm4.254 0a.637.637 0 10-1.274 0 .637.637 0 001.274 0zM12 7.177a4.823 4.823 0 100 9.646 4.823 4.823 0 000-9.646zm-3.146 4.823a3.146 3.146 0 116.292 0 3.146 3.146 0 01-6.292 0z"
-                  fill-rule="evenodd"></path>
-              </svg></a>
-            <a class="text-gray-400 hover:text-gray-500" href="#"><span class="sr-only">Twitter</span><svg
-                aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
-                </path>
-              </svg></a>
-          </div>
+        <div class="mt-8 border-t border-gray-200 dark:border-gray-800 pt-6 text-center">
+          <p class="text-sm text-gray-500 dark:text-gray-400">© 2024 Mi Chamba. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
